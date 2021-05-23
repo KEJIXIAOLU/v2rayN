@@ -180,74 +180,94 @@
 
 ## 全局代理
 所有上网连接全部走代理。
-    [
-    {
-    "port": "",
-    "outboundTag": "block",
-    "ip": [],
-    "domain": [
-      "#阻止CrxMouse鼠标手势收集上网数据",
-      "mousegesturesapi.com",
-      "#下一行广告管理平台网址，在ProductivityTab（原iChrome）浏览器插件页面显示",
-      "cf-se.com"
-      ],
-      "protocol": []
-      },
-      {
-    "type": "field",
-    "port": "0-65535",
-    "outboundTag": "proxy"
-    }
-    ]
+
+
+        [
+          {
+            "port": "",
+            "outboundTag": "block",
+            "ip": [],
+            "domain": [
+              "#阻止CrxMouse鼠标手势收集上网数据",
+              "mousegesturesapi.com",
+              "#下一行广告管理平台网址，在ProductivityTab（原iChrome）浏览器插件页面显示",
+              "cf-se.com"
+            ],
+            "protocol": []
+          },
+          {
+            "type": "field",
+            "port": "0-65535",
+            "outboundTag": "proxy"
+          }
+        ]
 
 ## 全局直连
 所有上网连接全部直连。
-    [
-    {
-    "port": "",
-    "outboundTag": "block",
-    "ip": [],
-    "domain": [
-      "#阻止CrxMouse鼠标手势收集上网数据",
-      "mousegesturesapi.com",
-      "#下一行广告管理平台网址，在ProductivityTab（原iChrome）浏览器插件页面显示",
-      "cf-se.com"
-      ],
-      "protocol": []
-      },
-      {
-    "port": "",
-    "outboundTag": "proxy",
-    "ip": [],
-    "domain": [
-      "#下一行ProductivityTab（原iChrome）浏览器插件",
-      "ichro.me"
-      ],
-    "protocol": []
-    },
-    {
-    "type": "field",
-    "port": "0-65535",
-    "outboundTag": "direct"
-    }
-    ]
 
+        [
+          {
+            "port": "",
+            "outboundTag": "block",
+            "ip": [],
+            "domain": [
+              "#阻止CrxMouse鼠标手势收集上网数据",
+              "mousegesturesapi.com",
+              "#下一行广告管理平台网址，在ProductivityTab（原iChrome）浏览器插件页面显示",
+              "cf-se.com"
+            ],
+            "protocol": []
+          },
+          {
+            "port": "",
+            "outboundTag": "proxy",
+            "ip": [],
+            "domain": [
+              "#下一行ProductivityTab（原iChrome）浏览器插件",
+              "ichro.me"
+            ],
+            "protocol": []
+          },
+          {
+            "type": "field",
+            "port": "0-65535",
+            "outboundTag": "direct"
+          }
+        ]
 ## 全局阻断
 阻断所有上网连接。
-    [
-    {
-    "type": "field",
-    "port": "0-65535",
-    "outboundTag": "block",
-    "ip": [],
-    "domain": [],
-    "protocol": []
-    }
-    ]
-    
+
+        [
+          {
+            "type": "field",
+            "port": "0-65535",
+            "outboundTag": "block",
+            "ip": [],
+            "domain": [],
+            "protocol": []
+          }
+        ]
+
 ### 几点重要说明
 - 路由规则中的中文说明，不需要删除，这都是以“#”开头的注释行。当然，也可以删掉，也可以自己添加。
 - 自定义添加规则后，一定以英文逗号“,”结尾，不然会导致全部规则失效。
 - 这些V2RayN高级路由功能策略代理规则，是个人使用并不断完善起来的，其中个别网址未必适合所有人，可以自己添加或删减。
 - 高级路由功能中“预定义规则集列表”中的各行规则，不要随意改变排列顺序。因为，越在上面的规则，优先级别越大。调整顺序后，也会改变代理模式。
 例如，在黑名单PAC代理模式规则集中，第二行是“proxy”代理规则，如果里面添加了域名baiyunju.cc，而第三行“direct”直连规则中，也添加了baiyunju.cc这个网址，那么，因为第二行比第三行更靠前，因此baiyunju.cc会按照第二行的规则连接网络，忽略第三行的设置。
+
+## 六、快速添加路由设置规则的方法
+首先，了解一些基本的定义和规则：
+- Proxy (代理)、Direct (直连)、Block (阻止)的含义
+- Block (阻止)： 拦截向外发送的连接请求，禁止连网。
+- Direct (直连)： 直接访问外部网络，不走代理。
+- Proxy (代理)： 允许通过代理连接上网。
+
+- 查看V2Ray连接日志信息中，每条URL后面是[direct]（直连），还是[proxy]（代理）。
+鼠标拖动选择这个网址URL，点击右键，选择“快速添加路由规则(Ctrl+V)”，或者按快捷键“Ctrl+V”，即可复制该URL的同时，自动打开V2RayN的“路由设置”界面，如下图：
+然后，在“路由设置”界面，切换到“直连的Domain或IP”选项卡，选择好位置，再次按快捷键“Ctrl+V”，就将该网址粘贴到指定位置了。
+
+## 七、黑名单电报设置的方法
+只需要将Telegram的远程IP地址 91.108.56.156 添加到V2Ray路由代理规则内就可以了。
+
+## 八、 检查更新系统代理
+点击V2RayN界面-"检查更新"
