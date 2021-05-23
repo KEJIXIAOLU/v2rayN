@@ -1,6 +1,7 @@
 # v2rayN
 ## 一、最新版V2RayN客户端下载
 软件下载地址：https://github.com/2dust/v2rayN/tags 
+
 教程请参考《一分钟设置V2rayN路由方法》：https://www.youtube.com/watch?v=HLNvXEzpgl8
 ## 二、系统代理
 - 清除系统代理（禁用代理）：
