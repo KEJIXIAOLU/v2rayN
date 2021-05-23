@@ -2,7 +2,6 @@
 ## 一、最新版V2RayN客户端下载
 软件下载地址：https://github.com/2dust/v2rayN/tags 
 
-教程请参考《一分钟设置V2rayN路由方法》：https://www.youtube.com/watch?v=HLNvXEzpgl8
 ## 二、系统代理
 - 清除系统代理（禁用代理）：
         意思是清空/禁用Windows系列“网络和Internet”-“代理”中的代理设置。
@@ -14,6 +13,8 @@
     经过实际测试，会发现 “自动配置系统代理”和? “不改变系统代理”，都是全局代理，也就是所有连接都通过代理。
 ## 三、 参数设置
 点击V2RayN界面“设置”-“参数设置”-“V2RayN设置”，勾选“更新Core时忽略Geo文件”，Core类型选"Xray_core"
+
+教程请参考《一分钟设置V2rayN路由方法》：https://www.youtube.com/watch?v=HLNvXEzpgl8
 ## 四、 基础规则
 - 基础规则——一键导入基础规则 
 
@@ -269,7 +270,9 @@
 然后，在“路由设置”界面，切换到“直连的Domain或IP”选项卡，选择好位置，再次按快捷键“Ctrl+V”，就将该网址粘贴到指定位置了。
 
 ## 七、黑名单电报设置的方法
-只需要将Telegram的远程IP地址 91.108.56.156 添加到V2Ray路由代理规则内就可以了。
+只需要将Telegram的远程IP地址 91.108.56.156 添加到V2Ray路由代理规则内就可以了。.
+
+教程请参考《一分钟设置V2rayN路由方法》：https://www.youtube.com/watch?v=HLNvXEzpgl8
 
 ## 八、 检查更新系统代理
 点击V2RayN界面-"检查更新"
